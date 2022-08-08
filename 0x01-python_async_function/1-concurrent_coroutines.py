@@ -25,4 +25,4 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
         new_list.append(min)
         list_value.remove(min)
 
-    print(new_list)
+    return (new_list)
