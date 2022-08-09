@@ -12,4 +12,4 @@ async def async_generator() -> Generator:
     yield a random number float between 0 and 10"""
     for x in range(10):
         await asyncio.sleep(1)
-        return(yield(random.uniform(0, 10)))
+        yield(random.uniform(0, 10))
