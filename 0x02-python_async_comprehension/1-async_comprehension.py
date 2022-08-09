@@ -12,5 +12,5 @@ async_generator = __import__('0-async_generator').async_generator
 
 async def async_comprehension() -> List[float]:
     """Collect numbers using an async comprehensing over async_generator"""
-    total = [x async for x in async_generator]
+    total = [x async for x in async_generator()]
     return(total)
