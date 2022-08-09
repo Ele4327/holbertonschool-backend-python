@@ -7,9 +7,9 @@ import random
 from typing import Generator
 
 
-async def async_generator() -> Generator:
+async def async_generator() -> Generator[]:
     """Loop 10 times, await 1 sec for each time and
     yield a random number float between 0 and 10"""
     for x in range(10):
         await asyncio.sleep(1)
-        yield(random.uniform(0, 10))
+        yield(random.random() * 10)
