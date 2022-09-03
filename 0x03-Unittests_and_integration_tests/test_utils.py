@@ -18,8 +18,7 @@ class TestAccessNestedMap(unittest.TestCase):
     ])
     def test_access_nested_map(self, nested_map, path, planned_output):
         """Test that gives a planned_output"""
-        real_output = access_nested_map(nested_map, path)
-        self.assertEqual(real_output, planned_output)
+        self.assertEqual(access_nested_map(nested_map, path), planned_output)
 
     @parameterized.expand([
         ({}, ("a",)),
