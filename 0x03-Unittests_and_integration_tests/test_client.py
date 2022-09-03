@@ -33,7 +33,7 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos_url(self, name, result):
         """ Test method returns correct output """
         with patch('client.GithubOrgClient.org',
-                    PropertyMock_Json(return_value=result)):
+                   PropertyMock_Json(return_value=result)):
             response = GithubOrgClient(name)._public_repos_url
             self.assertEqual(response, result.get('repos_url'))
 
@@ -63,12 +63,11 @@ class TestGithubOrgClient(unittest.TestCase):
         result = GithubOrgClient.has_license(repo, key)
         self.assertEqual(result, expectation)
 
+
 @parameterized_class(['org_payload', 'repos_payload',
                       'expected_repos', 'apache2_repos'], TEST_PAYLOAD)
-
 class TestIntegrationGithubOrgClient(unittest.TestCase):
     """ An integration test for githuborg client"""
-
     @classmethod
     def setUpClass(cls):
         """ Configuration class """
